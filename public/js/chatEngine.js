@@ -24,7 +24,9 @@ $(function() {
         Chat.display("#chat", msg.id, msg.message, msg.id === id ? Chat.USER : Chat.OTHER)
         gotoBottom("chat")
     });
-
+    socket.on('chatapp.users.total', function(msg) {
+        $("#totalUsers").html((msg.total === undefined ? 0 : msg.total) + " connected")
+    });
     socket.on('chatapp.log', function(msg) {
         id = msg.id;
     });

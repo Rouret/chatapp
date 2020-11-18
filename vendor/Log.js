@@ -17,5 +17,4 @@ class Log {
             currentdate.getSeconds() + "]";
     }
 }
-
 module.exports = Log
