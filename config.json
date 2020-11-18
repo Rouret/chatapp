@@ -1,5 +1,6 @@
 {
     "port": 8080,
     "name": "ChatApp",
-    "public_folder": "public"
+    "public_folder": "public",
+    "views_folder": "views"
 }
