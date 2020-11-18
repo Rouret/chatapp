@@ -4,7 +4,7 @@ class Log {
     static ERROR = "ERROR"
 
     static display(message, ERROR_TYPE) {
-        console.log(`${Log.getTextDateAndTime()} ${ERROR_TYPE} : ${message}`);
+        console.log(`${Log.getTextDateAndTime()} ${ERROR_TYPE===undefined ? Log.INFO : ERROR_TYPE }: ${message}`);
     }
 
     static getTextDateAndTime() {
