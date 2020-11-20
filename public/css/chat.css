@@ -27,6 +27,10 @@ body {
     font-family: Helvetica, sans-serif;
 }
 
+#settings {
+    cursor: pointer;
+}
+
 .msger {
     display: flex;
     flex-flow: column wrap;

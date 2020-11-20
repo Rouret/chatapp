@@ -1,5 +1,5 @@
 import Chat from './model/Chat.js';
-
+import Modal from './model/Modal.js';
 var id;
 
 function setMessage(message) {
@@ -12,6 +12,7 @@ function gotoBottom(id) {
 }
 $(function() {
     var socket = io();
+    Modal.init("modal", "modal-text", "modal-close")
     $('#form').submit(function(e) {
         e.preventDefault();
         const msgValue = $('#msg-content').val();
@@ -30,4 +31,8 @@ $(function() {
     socket.on('chatapp.log', function(msg) {
         id = msg.id;
     });
+
+    $("#settings").click(() => {
+        Modal.open();
+    })
 });

@@ -3,7 +3,10 @@
 
 <head>
     <title>ChatApp my friend</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+    <link href="css/modal.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
+
     <link href="css/chat.css" rel="stylesheet">
 </head>
 
@@ -23,8 +26,19 @@
 
         <form class="msger-inputarea" action="" id="form">
             <input type="text" class="msger-input" id="msg-content" placeholder="Enter your message...">
+            <div id="settings">
+                <i class="fas fa-cog fa-3x"></i>
+            </div>
             <button class="msger-send-btn">Send</button>
         </form>
+        <!-- Modal content -->
+        <div id="modal">
+            <!-- Modal content -->
+            <div id="modal-content">
+                <span id="modal-close">&times;</span>
+                <p id="modal-text">Some text in the Modal..</p>
+            </div>
+        </div>
     </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.1/socket.io.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
