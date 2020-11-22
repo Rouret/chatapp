@@ -12,7 +12,7 @@ function gotoBottom(id) {
 }
 $(function() {
     var socket = io();
-    Modal.init("modal", "modal-text", "modal-close")
+    Modal.init("modal", "modal-close")
     $('#form').submit(function(e) {
         e.preventDefault();
         const msgValue = $('#msg-content').val();
