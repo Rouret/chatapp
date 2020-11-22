@@ -40,7 +40,7 @@ $(function() {
 
     $("#urlAvatar").on("input", () => {
         avatar = $("#urlAvatar").val()
-        $("#previewAvatar").css("background-image", `url('${link}')`)
+        $("#previewAvatar").css("background-image", `url('${avatar}')`)
             // socket.emit('chatapp.users.avatar', { avatar: link });
     })
     $("#pseudo").on("input", () => {
