@@ -17,7 +17,6 @@ app.get('/', (req, res) => {
 
 
 io.on('connection', (socket) => {
-    // console.log(io.engine.clientsCount)
     //@ip
     const userAddress = socket.handshake.address;
 
@@ -32,12 +31,13 @@ io.on('connection', (socket) => {
         Log.display(`${userAddress} send '${msg}'`);
         io.emit('chatapp.message', msg);
     });
+
+
     socket.on('disconnect', () => {
 
         database.deleteUser(socket.client.id)
         io.emit('chatapp.users.total', { 'total': database.users.length });
 
-        console.log(database.users.length)
         Log.display(`${userAddress} disconnected`);
     });
 });
@@ -45,5 +45,5 @@ io.on('connection', (socket) => {
 
 
 http.listen(config.port, () => {
-    console.log(`*** ${config.name} is listening (${config.port})`)
+    Log.display(`*** ${config.name} is listening (${config.port})`)
 });

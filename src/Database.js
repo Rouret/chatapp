@@ -17,6 +17,7 @@ class Database {
     getUser(id) {
         return this.users;
     }
+
 }
 
 module.exports = Database

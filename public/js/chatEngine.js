@@ -1,9 +1,11 @@
 import Chat from './model/Chat.js';
 import Modal from './model/Modal.js';
 var id;
+var avatar = "https://stylizedbay.com/wp-content/uploads/2018/02/unknown-avatar.jpg";
+var pseudo = "Unknow";
 
 function setMessage(message) {
-    return { id: id, message: message }
+    return { id: id, avatar: avatar, pseudo: pseudo, message: message }
 }
 
 function gotoBottom(id) {
@@ -22,7 +24,7 @@ $(function() {
     });
 
     socket.on('chatapp.message', function(msg) {
-        Chat.display("#chat", msg.id, msg.message, msg.id === id ? Chat.USER : Chat.OTHER)
+        Chat.display("#chat", msg.pseudo, msg.avatar, msg.message, msg.id === id ? Chat.USER : Chat.OTHER)
         gotoBottom("chat")
     });
     socket.on('chatapp.users.total', function(msg) {
@@ -34,5 +36,14 @@ $(function() {
 
     $("#settings").click(() => {
         Modal.open();
+    })
+
+    $("#urlAvatar").on("input", () => {
+        avatar = $("#urlAvatar").val()
+        $("#previewAvatar").css("background-image", `url('${link}')`)
+            // socket.emit('chatapp.users.avatar', { avatar: link });
+    })
+    $("#pseudo").on("input", () => {
+        pseudo = $("#pseudo").val()
     })
 });

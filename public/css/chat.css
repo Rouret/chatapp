@@ -196,3 +196,7 @@ input[type=submit] {
 input[type=submit]:hover {
     background-color: #45a049;
 }
+
+#previewAvatar {
+    background-image: url("https://stylizedbay.com/wp-content/uploads/2018/02/unknown-avatar.jpg");
+}
